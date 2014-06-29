@@ -1,0 +1,16 @@
+---
+- name: Install PHP, Apache
+  yum: name={{ item }} state=installed
+  with_items:
+    - httpd
+    - php
+
+- name: Copy PHP config file
+  copy: src=php.ini dest=/etc/
+  notify:
+    - restart httpd
+
+- name: Start httpd Service
+  service: name=httpd state=started 
+
+

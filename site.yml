@@ -1,0 +1,11 @@
+---
+- name: Install mysql-server, php, httpd, zabbix-server
+  hosts: zabbix-servers
+  user: vagrant
+  sudo: yes
+
+  roles:
+    - common
+    - php
+    - mysql
+    - zabbix-server
