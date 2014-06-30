@@ -21,7 +21,7 @@
   tags: zabbix-server-mysql
 
 - name: Create zabbix-server user
-  mysql_user: name={{ zabbix_sv_db_user }} password={{ zabbix_sv_db_passwd }} priv={{ zabbix_sv_db_user }}.*:ALL host='localhost' state=present
+  mysql_user: name={{ zabbix_sv_db_user }} password={{ zabbix_sv_db_passwd }} priv={{ zabbix_sv_db_user }}.*:ALL
   tags: zabbix-server-mysql
  
 - name: Check tables
