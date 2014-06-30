@@ -18,5 +18,5 @@
   tags: zabbix-agent
 
 - name: Service zabbix-agent
-  service: name=zabbi-agent state=started enabled=yes
+  service: name=zabbix-agent state=started
   tags: zabbix-agent
