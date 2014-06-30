@@ -1,11 +1,25 @@
 ---
-- name: Install mysql-server, php, httpd, zabbix-server
-  hosts: zabbix-servers
+- name: Install epel repository
   user: vagrant
   sudo: yes
 
   roles:
     - common
+
+- name: Install mysql-server, php, httpd, zabbix-server to zabbix-servers
+  hosts: zabbix-servers
+  user: vagrant
+  sudo: yes
+
+  roles:
     - php
     - mysql
     - zabbix-server
+
+- name: Install zabbix-agent to zabbix-agents
+  hosts: zabbix-agents
+  user: vagrant
+  sudo: yes
+
+  roles:
+    - zabbix-agent

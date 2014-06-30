@@ -3,6 +3,8 @@ zabbix_sv_db_name: zabbix
 zabbix_sv_db_user: zabbix
 zabbix_sv_db_passwd: zabbix
 
+zabbix_server: 192.168.33.11
+
 dbroot: root
 dbpass: root@123
 mysql_port: 3306

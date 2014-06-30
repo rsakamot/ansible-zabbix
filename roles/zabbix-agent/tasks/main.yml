@@ -1,0 +1,22 @@
+---
+- name: Install zabbix-agent
+  yum: name={{ item }} state=installed
+  with_items:
+    - zabbix-agent
+  tags:zabbix-agent
+
+- name: set config server
+  lineinfile: dest=/etc/zabbix/zabbix_agentd.conf regexp="^Server=*" insertafter="^# Server=" line=Server={{ zabbix_server }}
+  tags: zabbix-agent
+
+- name: set config hostname
+  lineinfile: dest=/etc/zabbix/zabbix_agentd.conf regexp="^Hostname=*" insertafter="^# Hostname=" line=Hostname={{ ansible_hostname }}{{ ansible_eth0.ipv4.address }}
+  tags: zabbix-agent
+
+- name: set Listen IP
+  lineinffile: dest=/etc/zabbix/zabbix_agentd.confg regexp="^ListenIP=*" insertafter="^# ListenIP=0.0.0.0" line=ListenIP={{ ansible_eth0.ipv4.address }}
+  tags: zabbix-agent
+
+- name: Service zabbix-agent
+  service: name=zabbi-agent state=started enabled=yes
+  tags: zabbix-agent
