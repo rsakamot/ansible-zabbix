@@ -4,3 +4,6 @@
 
 - name: Create the GPG Key for EPEL
   copy: src=RPM-GPG-KEY-EPEL-6 dest=/etc/pki/rpm-gpg/
+
+- name: Install Vim
+  yum: named=vim state=installed 
