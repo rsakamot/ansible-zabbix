@@ -1,5 +1,6 @@
 ---
 - name: Install epel repository
+  hosts: all
   user: vagrant
   sudo: yes
 
