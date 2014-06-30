@@ -10,7 +10,7 @@
   tags: zabbix-agent
 
 - name: set config hostname
-  lineinfile: dest=/etc/zabbix/zabbix_agentd.conf regexp="^Hostname=*" insertafter="^# Hostname=" line=Hostname={{ ansible_hostname }}{{ ansible_eth0.ipv4.address }}
+  lineinfile: dest=/etc/zabbix/zabbix_agentd.conf regexp="^Hostname=*" insertafter="^# Hostname=" line=Hostname={{ ansible_hostname }}{{ ansible_eth1.ipv4.address }}
   tags: zabbix-agent
 
 - name: set Listen IP
