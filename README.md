@@ -1,4 +1,4 @@
-ansible-zabbix_server
+ansible-zabbix
 =====================
 
-zabbix_server install using ansible
+zabbix-server and zabbix-agent install using ansible-playbook.
